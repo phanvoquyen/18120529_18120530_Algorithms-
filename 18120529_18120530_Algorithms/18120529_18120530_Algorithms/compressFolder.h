@@ -13,7 +13,7 @@ void DuyetDeNen(string name, string foldernamecompress) {//name là tên thư m�
 	if ((find = FindFirstFile(TenFile.c_str(), &data)) != INVALID_HANDLE_VALUE) {//nếu tím thấy file  đầu tiền trong thư mục
 		do {
 			if (!(data.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)) {//de chi hien thi tap tin khong hien thi thu muc
-				if (strstr(data.cFileName, ".txt") != NULL) {
+				if (strstr(data.cFileName, ".huffman") == NULL) {
 					string a = name + "\\" + data.cFileName;//tên của thư tập tin cần nén
 					TestCompress(a, foldernamecompress + "\\" + data.cFileName);//chuyền vào tên tập tin cần nén và tên tập tin sau khi nén
 				}
